@@ -172,9 +172,9 @@ export function WaitlistSection() {
         {/* Header */}
         <div className="text-center space-y-6 mb-12">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
           >
             <Badge
               variant="outline"
@@ -186,9 +186,9 @@ export function WaitlistSection() {
           </motion.div>
 
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
             className={`text-4xl lg:text-5xl font-regular text-foreground ${instrumentSerif.className}`}
           >
             Únete a la{" "}
@@ -196,9 +196,9 @@ export function WaitlistSection() {
           </motion.h2>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.15 }}
             className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
           >
             Sé de los primeros en acceder a DoctorMind y revoluciona tu práctica médica con IA de última generación
@@ -207,9 +207,9 @@ export function WaitlistSection() {
 
         {/* Form Card */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
         >
           <Card className="border-2 border-primary/20 shadow-xl bg-gradient-to-br from-primary/5 via-background to-background">
             <CardContent className="p-8">
@@ -223,8 +223,8 @@ export function WaitlistSection() {
 
               {isSubmitted ? (
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
                   className="text-center py-12 space-y-4"
                 >
                   <CheckCircle2 className="h-16 w-16 text-primary mx-auto" />

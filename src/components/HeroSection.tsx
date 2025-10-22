@@ -125,10 +125,10 @@ export function HeroSection({
 
         {/* Enhanced Input Container */}
         <div className="relative group px-2 sm:px-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-teal-500 to-blue-600 rounded-2xl blur opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-teal-500 to-blue-600 rounded-2xl blur opacity-20 md:group-hover:opacity-30 transition-opacity duration-500"></div>
           <div
             className={cn(
-              "relative bg-white/90 backdrop-blur-xl rounded-3xl border border-gray-300 shadow-2xl transition-all duration-300",
+              "relative bg-white/90 md:backdrop-blur-xl rounded-3xl border border-gray-300 shadow-2xl transition-all duration-300",
               isFocused && "shadow-3xl ring-2 ring-teal-500/20",
             )}
           >
@@ -206,8 +206,8 @@ export function HeroSection({
                         (input.length === 0 && !isLoading)
                       }
                       className={cn(
-                        "rounded-full bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl h-8 w-8 sm:h-9 sm:w-9 flex-shrink-0",
-                        input.trim() && !isLoading && "hover:scale-110",
+                        "rounded-full bg-gradient-to-r from-teal-500 to-blue-600 md:hover:from-teal-600 md:hover:to-blue-700 transition-all duration-300 shadow-lg md:hover:shadow-xl h-8 w-8 sm:h-9 sm:w-9 flex-shrink-0",
+                        input.trim() && !isLoading && "md:hover:scale-110",
                         (input.length === 0 || isLoading) && "opacity-50 cursor-not-allowed",
                         (isLoading) && "animate-pulse"
                       )}

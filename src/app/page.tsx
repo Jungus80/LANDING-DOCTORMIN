@@ -15,11 +15,11 @@ export default function Home() {
            <AnimatedGridPattern
         width={150}
         height={150}
-        numSquares={30}
-        maxOpacity={0.1}
-        duration={3}
+        numSquares={15}
+        maxOpacity={0.05}
+        duration={4}
         repeatDelay={1}
-        className=" inset-x-0 inset-y-[-30%] h-[200%] text-secondary"
+        className="hidden md:block inset-x-0 inset-y-[-30%] h-[200%] text-secondary"
       />
 {/* 
          <button className="cursor-pointer   group relative    text-sm px-4 py-3 rounded-medium bg-primary transition-all duration-200 ease-in-out shadow hover:shadow-lg ">

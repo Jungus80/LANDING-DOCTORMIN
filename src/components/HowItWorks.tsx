@@ -1,15 +1,40 @@
 "use client"
 import { Button } from "@/components/ui/button";
 import Lottie from "lottie-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export function HowItWorks() {
   const [inputAnimation, setInputAnimation] = useState(null);
   const [busquedaAnimation, setBusquedaAnimation] = useState(null);
   const [respuestaAnimation, setRespuestaAnimation] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    // Cargar todas las animaciones Lottie dinámicamente
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isVisible) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, [isVisible]);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    // Cargar animaciones solo cuando la sección es visible
     const loadAnimations = async () => {
       try {
         const [inputRes, busquedaRes, respuestaRes] = await Promise.all([
@@ -33,7 +58,7 @@ export function HowItWorks() {
     };
 
     loadAnimations();
-  }, []);
+  }, [isVisible]);
 
   const steps = [
     {
@@ -63,7 +88,7 @@ export function HowItWorks() {
   ];
 
   return (
-    <section className="py-20 relative">
+    <section ref={sectionRef} className="py-20 relative">
       {/* Grid pattern background */}
       
       <div className="container mx-auto px-4 relative z-10">
@@ -88,9 +113,14 @@ export function HowItWorks() {
                     <Lottie 
                       animationData={step.lottie}
                       loop={true}
-                      autoplay={true}
+                      autoplay={isVisible}
                       style={{ width: '100%', height: '100%' }}
                       className="absolute inset-0"
+                      rendererSettings={{
+                        preserveAspectRatio: 'xMidYMid slice',
+                        progressiveLoad: true,
+                        hideOnTransparent: true
+                      }}
                     />
                   ) : (
                     <div className="w-full h-full bg-gray-100 rounded-lg flex items-center justify-center">
@@ -126,4 +156,3 @@ export function HowItWorks() {
     </section>
   );
 }
-

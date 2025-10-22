@@ -62,7 +62,7 @@ export function UseCasesSection() {
           {useCases.map((useCase, index) => {
             const Icon = useCase.icon;
             return (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <Card key={index} className="border-0 shadow-lg md:hover:shadow-xl transition-all duration-300 md:hover:-translate-y-1">
                 <CardHeader className="pb-4">
                   <div className="flex items-start justify-between">
                     <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
@@ -105,4 +105,3 @@ export function UseCasesSection() {
     </section>
   );
 }
-

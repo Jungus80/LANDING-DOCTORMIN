@@ -54,7 +54,7 @@ export function BenefitsSection() {
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon;
             return (
-              <Card key={index} className="border-6 border-transparent py-0 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-background ">
+              <Card key={index} className="border-6 border-transparent py-0 rounded-2xl shadow-lg md:hover:shadow-xl transition-all duration-300 md:hover:-translate-y-1 bg-background ">
                 <CardContent className="text-center justify-center items-center flex   w-[100%] h-40 bg-gradient-to-br from-primary/10 via-primary/5 to-background  rounded-t-2xl">
                   <div className="w-20 h-20 mx-auto bg-white rounded-lg flex items-center justify-center border-2 border-transparent shadow">
                     <Icon className="h-12 w-12 text-primary" />
@@ -80,4 +80,3 @@ export function BenefitsSection() {
     </section>
   );
 }
-

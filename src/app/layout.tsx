@@ -18,6 +18,12 @@ export const metadata: Metadata = {
   description: "Encuentra respuestas confiables en segundos, basadas en evidencia científica de PubMed, OMS y revistas médicas. Para médicos e investigadores de la salud.",
   keywords: "inteligencia artificial médica, IA médica, PubMed, OMS, medicina, investigación médica, diagnóstico médico",
   authors: [{ name: "DoctorMind" }],
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+  },
   openGraph: {
     title: "DoctorMind - Tu asistente de IA médica",
     description: "Encuentra respuestas confiables en segundos, basadas en evidencia científica",
