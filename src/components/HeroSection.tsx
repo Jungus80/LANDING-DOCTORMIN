@@ -42,15 +42,15 @@ const instrumentSerif = Instrument_Serif({
 export function HeroSection({
   handleInputChange,
   handleSubmit,
-  isLoading,
-  socketError,
+  isLoading = false,
+  socketError = null,
   query,
   stop,
   append,
-  showScrollToBottomButton,
+  showScrollToBottomButton = false,
   scrollContainerRef,
-  chatId
-}: ChatPanelProps) {
+  chatId = ""
+}: Partial<ChatPanelProps> = {}) {
   const [input, setInput] = useState("");
   const [showEmptyScreen, setShowEmptyScreen] = useState(false)
   const [isFocused, setIsFocused] = useState(false)
@@ -58,6 +58,31 @@ export function HeroSection({
   const isFirstRender = useRef(true)
   const [isComposing, setIsComposing] = useState(false) // Composition state
   const [enterDisabled, setEnterDisabled] = useState(false) /// Estado para el modo activo
+
+  // Funciones dummy para evitar errores
+  const dummyHandleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setInput(e.target.value);
+    if (handleInputChange) {
+      handleInputChange(e);
+    }
+  };
+
+  const dummyHandleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // No hacer nada por ahora, solo prevenir el comportamiento por defecto
+    console.log("Chat submitted:", input);
+    setInput(""); // Limpiar el input
+    if (handleSubmit) {
+      handleSubmit(e);
+    }
+  };
+
+  const dummyStop = () => {
+    console.log("Stop chat");
+    if (stop) {
+      stop();
+    }
+  };
  
 
   const handleCompositionStart = () => setIsComposing(true)
@@ -93,7 +118,7 @@ export function HeroSection({
           </div>
 
           <form
-        onSubmit={handleSubmit} // Cambiar a handleSocketSubmit
+        onSubmit={dummyHandleSubmit}
         className={' w-full mx-auto relativ max-w-2xl'}
       >
      
@@ -144,7 +169,7 @@ export function HeroSection({
                           "border-none outline-none focus:outline-none focus:ring-0 focus:border-none resize-none text-base"
                         )}
                         onChange={e => {
-                          handleInputChange(e)
+                          dummyHandleInputChange(e)
                           setShowEmptyScreen(e.target.value.length === 0)
                         }}
                         onKeyDown={e => {
@@ -159,7 +184,7 @@ export function HeroSection({
                               return
                             }
                             e.preventDefault()
-                            handleSubmit(e as any) // Usar handleSocketSubmit
+                            dummyHandleSubmit(e as any)
                           }
                         }}
                       />
@@ -176,7 +201,7 @@ export function HeroSection({
                     <Button
                       type={isLoading ? 'button' : 'submit'}
                       size="icon"
-                      onClick={isLoading ? stop : undefined}
+                      onClick={isLoading ? dummyStop : undefined}
                       disabled={
                         (input.length === 0 && !isLoading)
                       }

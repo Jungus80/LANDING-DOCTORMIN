@@ -29,7 +29,7 @@ export function CTASection() {
               </h2>
               
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                Únete a más de 10,000 profesionales de la salud en nuestra lista de espera.
+                Únete a los primeros profesionales de la salud en nuestra lista de espera.
               </p>
             </div>
 

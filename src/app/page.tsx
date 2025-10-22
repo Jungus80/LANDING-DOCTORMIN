@@ -50,7 +50,7 @@ export default function Home() {
       
         <WaitlistSection />
       
-        <CTASection />
+    
       
       <Footer />
     </div>

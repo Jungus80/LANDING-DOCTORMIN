@@ -70,7 +70,7 @@ export function WaitlistSection() {
     } catch (error) {
       if (error instanceof z.ZodError) {
         const newErrors: Record<string, string> = {};
-        error.errors.forEach((err) => {
+        error.issues.forEach((err) => {
           newErrors[err.path[0].toString()] = err.message;
         });
         setErrors(newErrors);
@@ -259,12 +259,7 @@ export function WaitlistSection() {
                       } bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all disabled:opacity-50 disabled:cursor-not-allowed`}
                       placeholder="Dr. Juan Pérez"
                     />
-                    {errors.name && (
-                      <p className="text-sm text-red-500 flex items-center gap-1">
-                        <AlertCircle className="h-3 w-3" />
-                        {errors.name}
-                      </p>
-                    )}
+                
                   </div>
 
                   {/* Email Input */}
@@ -289,12 +284,7 @@ export function WaitlistSection() {
                       } bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all disabled:opacity-50 disabled:cursor-not-allowed`}
                       placeholder="tu@email.com"
                     />
-                    {errors.email && (
-                      <p className="text-sm text-red-500 flex items-center gap-1">
-                        <AlertCircle className="h-3 w-3" />
-                        {errors.email}
-                      </p>
-                    )}
+                
                   </div>
 
                   {/* Profession Select */}
@@ -397,9 +387,6 @@ export function WaitlistSection() {
 
         {/* Additional Info */}
         <div className="text-center mt-12 space-y-4">
-          <p className="text-muted-foreground">
-            Únete a más de <span className="text-primary font-semibold">10,000+</span> profesionales de la salud en lista de espera
-          </p>
           <div className="flex justify-center gap-8 text-sm text-muted-foreground flex-wrap">
             <span className="flex items-center gap-1">
               <CheckCircle2 className="h-4 w-4 text-primary" />
