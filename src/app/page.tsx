@@ -3,13 +3,11 @@ import { HeroSection } from "@/components/HeroSection";
 import { HowItWorks } from "@/components/HowItWorks";
 import { BenefitsSection } from "@/components/BenefitsSection";
 import { UseCasesSection } from "@/components/UseCasesSection";
-import { PricingSection } from "@/components/PricingSection";
-import SimplePricing from "@/components/mvpblocks/simple-pricing";
-import Testimonials from "@/components/mvpblocks/testimonials-marquee";
+import { WaitlistSection } from "@/components/WaitlistSection";
+
 import { CTASection } from "@/components/CTASection";
 import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
 import { Footer } from "@/components/Footer";
-import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
 
 export default function Home() {
   return (
@@ -46,22 +44,11 @@ export default function Home() {
       
       
         <HeroSection />
-
-        <div className="flex justify-center items-center py-16 ">
-                <HeroVideoDialog
-          className="block dark:hidden"
-          animationStyle="from-center"
-          videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
-          thumbnailSrc="https://startup-template-sage.vercel.app/hero-dark.png"
-          thumbnailAlt="Dummy Video Thumbnail"
-        />
-        </div>
-
  
         <HowItWorks />
         <BenefitsSection />
       
-        <SimplePricing />
+        <WaitlistSection />
       
         <CTASection />
       

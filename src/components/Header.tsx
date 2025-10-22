@@ -20,19 +20,19 @@ export function Header() {
               href="#about"
               className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors"
             >
-              About
+            
             </a>
             <a
               href="#technologies"
               className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors"
             >
-              Technologies
+             
             </a>
             <a
               href="#products"
               className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors"
             >
-              Products
+             
             </a>
           </nav>
 
@@ -50,17 +50,15 @@ export function Header() {
               href="#team"
               className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors"
             >
-              Team
+            
             </a>
             <a
               href="#pricing"
               className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors"
             >
-              Pricing
+             
             </a>
-            <Button className="bg-foreground hover:bg-foreground/90 text-background rounded-lg">
-              Get Started
-            </Button>
+          
           </div>
 
           {/* Mobile Menu Button */}

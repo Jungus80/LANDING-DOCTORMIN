@@ -5,7 +5,7 @@ import { RainbowButton } from "@/components/magicui/rainbow-button";
 import { Poppins, Instrument_Serif } from "next/font/google";
 import { useState, useRef} from "react";
 import Textarea from 'react-textarea-autosize'
-import { Rocket, ArrowUp, ChevronDown, MessageCirclePlus, Square, Sparkles, Paperclip, Mic, Search, Globe, Lightbulb, Network } from 'lucide-react'
+import { Rocket, ArrowUp, ChevronDown, MessageCirclePlus, Square, Sparkles, Paperclip, Mic, Search, Globe, Lightbulb, Network, ArrowDown } from 'lucide-react'
 import { cn } from "@/lib/utils";
 
 interface ChatPanelProps {
@@ -207,9 +207,15 @@ export function HeroSection({
             <RainbowButton 
               size="lg" 
               className="text-lg px-8 py-4"
+              onClick={() => {
+                const waitlistSection = document.querySelector('#waitlist');
+                if (waitlistSection) {
+                  waitlistSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
             >
-              Try 14 days free
-              <Rocket className="ml-2 h-5 w-5" />
+              Únete a Waitlist
+              <ArrowDown className="ml-2 h-5 w-5" />
             </RainbowButton>
           </div>
         </div>

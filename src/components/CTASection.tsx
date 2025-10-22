@@ -20,23 +20,23 @@ export function CTASection() {
             <div className="space-y-4">
               <div className="inline-flex items-center gap-2 bg-white text-primary px-4 py-2  text-sm font-medium">
                 <Sparkles className="h-4 w-4" />
-                Únete a la revolución médica
+                Acceso Anticipado Disponible
               </div>
               
               <h2 className={`text-4xl lg:text-5xl regular text-foreground ${instrumentSerif.className}`}>
-                Únete a la nueva era de la{" "}
-                <span className="text-primary">investigación médica</span>{" "}
+                Sé parte de la revolución en{" "}
+                <span className="text-primary">medicina con IA</span>{" "}
               </h2>
               
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                Más de 10,000 profesionales de la salud ya confían en DoctorMind.
+                Únete a más de 10,000 profesionales de la salud en nuestra lista de espera.
               </p>
             </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center ">
               <Button size="lg" className={`${instrumentSerif.className} rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground text-xl px-8 py-6`}>
-                Comienza Gratis
+                Únete a Waitlist
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
@@ -48,4 +48,3 @@ export function CTASection() {
     </section>
   );
 }
-
